@@ -25,6 +25,12 @@ zotty 从不直接写 `zotero.sqlite`，也不使用 Zotero 同步。它只读�
 ## 安装
 
 ```bash
+brew install xin-yi6/tap/zotty
+```
+
+也可以直接下载最新版本：
+
+```bash
 curl -fsSL "https://github.com/xin-yi6/zotty/releases/latest/download/zotty_darwin_$(uname -m).tar.gz" | sudo tar -xz -C /usr/local/bin zotty
 ```
 
@@ -39,7 +45,7 @@ zotty doctor
 
 `zotty doctor` 发现问题时会告诉你怎么解决。如果要修改论文，需要在 Zotero 的“设置 > 高级”里打开“允许此计算机上的其他应用程序与 Zotero 通信”。第一次修改时 Zotero 会询问一次权限。
 
-升级时安装新版本，再运行一次 `zotty service install`。
+升级时运行 `brew upgrade zotty`（或重新下载安装），再运行一次 `zotty service install`。
 
 ## 使用
 
@@ -75,7 +81,7 @@ zotty add 1706.03762 --to "Machine learning"
 - **阅读状态**的存储方式和 [Zotero Reading List](https://github.com/Dominic-DallOsto/zotero-reading-list) 插件相同，两者看到的状态一致。不需要安装这个插件。
 - **“App Background Activity”提醒**：运行 `zotty service install` 和每次升级后，macOS 会弹出这条提醒，指的就是接收器。可以在“系统设置 > 通用 > 登录项与扩展”里看到它。
 - **Connector 更新**：接收器用的是 Connector 的通信协议，这不是公开接口。如果 Zotero 关着时保存失败，打开 Zotero 照常保存即可。
-- **卸载**：运行 `zotty service uninstall`，再删除 `/usr/local/bin/zotty` 和 `~/Library/Application Support/zotty`。
+- **卸载**：运行 `zotty service uninstall`，然后运行 `brew uninstall zotty`（或删除 `/usr/local/bin/zotty`），再删除 `~/Library/Application Support/zotty`。
 
 ## 致谢
 

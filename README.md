@@ -33,6 +33,12 @@ is closed wait and are made when it opens.
 ## Install
 
 ```bash
+brew install xin-yi6/tap/zotty
+```
+
+Or download the latest release:
+
+```bash
 curl -fsSL "https://github.com/xin-yi6/zotty/releases/latest/download/zotty_darwin_$(uname -m).tar.gz" | sudo tar -xz -C /usr/local/bin zotty
 ```
 
@@ -49,7 +55,8 @@ zotty doctor
 turn on "Allow other applications on this computer to communicate with Zotero"
 in Zotero's Settings > Advanced; the first change asks for permission once.
 
-To upgrade, install the new version and run `zotty service install` again.
+To upgrade, run `brew upgrade zotty` (or install the new release), then
+`zotty service install` again.
 
 ## Use
 
@@ -94,8 +101,8 @@ Run `zotty help` for all commands.
 - **Connector updates**: the receiver speaks the Connector's protocol, which
   isn't a public API. If saving ever fails with Zotero closed, open Zotero and
   save as usual.
-- **Uninstall**: `zotty service uninstall`, then delete `/usr/local/bin/zotty`
-  and `~/Library/Application Support/zotty`.
+- **Uninstall**: `zotty service uninstall`, then `brew uninstall zotty` (or
+  delete `/usr/local/bin/zotty`) and `~/Library/Application Support/zotty`.
 
 ## Acknowledgements
 
